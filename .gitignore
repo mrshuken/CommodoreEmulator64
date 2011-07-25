@@ -25,3 +25,8 @@ Sources.vcxproj.user
 .DS_Store
 
 # Qt Creator Project files
+
+.pro
+
+.user
+
