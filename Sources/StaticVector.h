@@ -1,7 +1,7 @@
 #ifndef STATICVECTOR_H
 #define STATICVECTOR_H
 
-#include <cstring> // for std::size_t 
+#include <string.h> // for std::size_t 
 
 namespace Commodore64
 {
@@ -84,4 +84,4 @@ namespace Commodore64
 
 }
 
-#endif // STATICVECTOR_H
+#endif /*STATICVECTOR_H*/

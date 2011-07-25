@@ -1,5 +1,5 @@
-#ifndef COMMODOREEMULATOR64_RAM_H
-#define COMMODOREEMULATOR64_RAM_H
+#ifndef RAM_H
+#define RAM_H
 
 #include "StaticVector.h"
 
@@ -18,77 +18,77 @@ namespace Commodore64
 
       public:
 
-         byte &DataDirection()
+         const byte &DataDirection() const
          {
             return memory_[ 0 ];
          }
 
-         byte DataDirection() const
+         const byte DataDirection() const
          {
             return memory_[ 0 ];
          }
 
-         byte &Port()
+         const byte &Port() const
          {
             return memory_[ 1 ];
          }
 
-         byte Port() const
+         const byte Port() const
          {
             return memory_[ 1 ];
          }
 
-         byte *RegsFrom6510()
+         const byte *RegsFrom6510() const
          {
             return memory_.begin(); // return the vector's starting address
          }
 
-         byte *OsReservedMemory()
+         const byte *OsReservedMemory() const
          {
             return ( memory_ + 2 );
          }
 
-         byte *ScreenMemory()
+         const byte *ScreenMemory() const
          {
             return ( memory_ + 1024 );
          }
 
-         byte *Animations()
+         const byte *Animations() const
          {
             return ( memory_ + 2040 );
          }
 
-         byte *UserProgramMemory()
+         const byte *UserProgramMemory() const
          {
             return ( memory_ + 2048 );
          }
 
-         byte *BasicInterpreter()
+         const  byte *BasicInterpreter() const
          {
             return ( memory_ + 40960 );
          }
 
-         byte *VicIIregs()
+         const byte *VicIIregs() const
          {
             return ( memory_ + 53248 );
          }
 
-         byte *ColorRam()
+         const byte *ColorRam() const
          {
             return ( memory_ + 55296 );
          }
 
-         byte *IOregs()
+         const byte *IOregs() const
          {
             return ( memory_ + 56320 );
          }
 
-         byte *OsKernel()
+         const byte *OsKernel() const
          {
             return ( memory_ + 57344 );
          }
 
-         byte at( std::size_t offset )
+         const byte at( std::size_t offset ) const
          {
             return memory_[ offset ];
          }
@@ -103,4 +103,4 @@ namespace Commodore64
 
 }
 
-#endif /*COMMODOREEMULATOR64_RAM_H*/
+#endif /*RAM_H*/

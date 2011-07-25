@@ -1,3 +1,6 @@
+#ifndef CPU_H
+#define CPU_H
+
 #include "Register.h"
 
 namespace Commodore64
@@ -11,32 +14,32 @@ namespace Commodore64
 
       public:
 
-         Register &regA()
+         const Register &regA() const
          {
             return registers[ 0 ];
          }
 
-         Register &regX()
+         const Register &regX() const
          {
             return registers[ 1 ];
          }
 
-         Register &regY()
+        const  Register &regY() const
          {
             return registers[ 2 ];
          }
 
-         Register &regFlags()
+         const Register &regFlags() const
          {
             return registers[ 3 ];
          }
 
-         Register &regPC()
+         const Register &regPC() const
          {
             return registers[ 4 ];
          }
 
-         Register &regSP()
+         const Register &regSP() const
          {
             return registers[ 5 ];
          }
@@ -50,3 +53,5 @@ namespace Commodore64
    }
 
 }
+
+#endif /*CPU_H*/

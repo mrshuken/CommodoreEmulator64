@@ -1,37 +1,41 @@
 #ifndef REGISTER_H
 #define REGISTER_H
 
+#include <assert.h>
+
 namespace Commodore64
 {
 
    namespace Hardware
    {
-
+   
       // TODO
-
+      typedef unsigned char byte;   
+   
       class Register
       {
 
       public:
 
-         unsigned char getBitN( unsigned char n )
+         const byte getBitN( int n )
          {
-            // Implementa , serve per ottenere l' n-esimo bit , utile per i flag 
+             assert(n > 7, "Index too large");
+             return data_ << (8-n) >> 8;
          }
 
-         unsigned char data() const 
+         const byte data() const 
          {
             return data_;
          }
 
-         void data( unsigned char val )
+         void data( byte val )
          { 
             data_ = val;
          }
 
       private:
 
-         unsigned char data_;
+         byte data_;
 
       };
 
@@ -39,4 +43,4 @@ namespace Commodore64
 
 }
 
-#endif // REGISTER_H
+#endif /*REGISTER_H*/
