@@ -17,10 +17,10 @@ namespace Commodore64
 
       public:
 
-         const byte getBitN( int n )
+         const byte getBitN( int n ) const
          {
-             assert(n > 7, "Index too large");
-             return data_ << (8-n) >> 8;
+             assert(n >= 0 && n <= 7, "Index too big");
+             return (data_ >> n) & 1;
          }
 
          const byte data() const 
