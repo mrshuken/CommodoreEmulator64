@@ -19,7 +19,7 @@ namespace Commodore64
 
          const byte getBitN( int n ) const
          {
-             assert(n >= 0 && n <= 7, "Index too big");
+             assert(n >= 0 && n <= 7, "Index out of range");
              return (data_ >> n) & 1;
          }
 
