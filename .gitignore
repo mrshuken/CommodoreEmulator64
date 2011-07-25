@@ -1,0 +1,27 @@
+# Visual Studio Project files
+
+Debug
+
+ipch
+
+Release
+
+Sources.sdf
+
+Sources.opensdf
+
+Sources.sln
+
+Sources.suo
+
+Sources.vcxproj
+
+Sources.vcxproj.filters
+
+Sources.vcxproj.user
+
+# OS X
+
+.DS_Store
+
+# Qt Creator Project files
