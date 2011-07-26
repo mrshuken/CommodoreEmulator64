@@ -1,6 +1,10 @@
 #ifndef OPCODES_H
 #define OPCODES_h
 
+
+// MA VOGLIAMO MORIRE ?
+// chiamare ciclicamente una cosa del genere è da pazzi sfrenati . By Franciman ( ora manvbnet si arrabbierà )
+
 namespace Commodore64
 {
    namespace Opcodes

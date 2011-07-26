@@ -6,7 +6,6 @@
 namespace Commodore64
 {
 
-   enum CpuRegisters{ };
    
    namespace Hardware
    {
@@ -16,26 +15,32 @@ namespace Commodore64
 
       public:
 
-         void Init() { /*todo*/ }
-          
-         const Register &regA( enum CpuRegisters reg ) const
+         enum CpuRegisters;
+
+         const Register &getReg( CpuRegisters reg ) const
          {
             return registers[ reg ];
          }
          
+         Register &getReg( CpuRegisters reg )
+         {
+            return registers[ reg ];
+         }
+
       private:
 
          Register registers[ 6 ];
 
       };
-      
-      enum CpuRegisters
-      {
-          X = 1,
-          Y = 2,
-          Flags = 3,
-          PC = 4,
-          SP = 5
+
+      enum Cpu::CpuRegisters
+      { 
+         RegA,
+         RegX,
+         RegY,
+         RegFlag
+         RegSP,
+         RegPC,
       };
 
    }

@@ -11,7 +11,6 @@ namespace Commodore64
 
       const std::size_t RamSize = 65536; // 64 Kb
 
-      enum RamLocation{ };
       
       class Ram
       {
@@ -19,7 +18,9 @@ namespace Commodore64
 
       public:
 
-         byte* at( const RamLocation location )
+         enum RamLocation;
+
+         byte* at( unsigned short location )
          {
             return ( memory_ + location );
          }
@@ -32,7 +33,7 @@ namespace Commodore64
 
    }
    
-   enum RamLocation
+   enum Ram::RamLocation
    {
        DataDirection = 0,
        Port = 1,
