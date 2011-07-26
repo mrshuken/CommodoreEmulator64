@@ -10,16 +10,17 @@ namespace Commodore64
    {
    
       // TODO
-      typedef unsigned char byte;   
+         
    
       class Register
       {
-
+          typedef unsigned char byte;
+          
       public:
 
          const byte getBitN( int n ) const
          {
-             assert(n >= 0 && n <= 7, "Index out of range");
+             assert(n >= 0 && n <= 7);
              return (data_ >> n) & 1;
          }
 
