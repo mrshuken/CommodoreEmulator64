@@ -19,7 +19,7 @@ namespace Commodore64
 
       public:
 
-         byte* byteAt( const RamLocation location )
+         byte* at( const RamLocation location )
          {
             return ( memory_ + location );
          }
