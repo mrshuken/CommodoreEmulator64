@@ -15,7 +15,10 @@ typedef unsigned char byte;
 int main( int argc, char *argv[] )
 {
     Ram ram;
-    byte* ptr = ram.byteAt(DataDirection);
+    byte* ptr = ram.at( Ram::DataDirection );
+    
+    Cpu cpu;
+    Register& reg = cpu.getReg( Cpu::RegA );
     
     cout << ptr;
     return 0;

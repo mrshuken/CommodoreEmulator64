@@ -17,11 +17,25 @@ namespace Commodore64
           typedef unsigned char byte;
 
       public:
-
-         enum RamLocation;
+         // this enum should be moved elsewhere
+         enum RamLocation
+         {
+            DataDirection = 0,
+            Port = 1,
+            ReservedMemory = 2,
+            ScreenMemory = 1024,
+            Animations = 2040,
+            UserProgramMemory = 2048,
+            BasicInterpreter = 40960,
+            VicIIregs = 53248,
+            ColorRam = 55296,
+            IOregs = 56320,
+            OsKernel = 57344
+         };
 
          byte* at( unsigned short location )
          {
+            assert( location >= 0 && location < RamSize );
             return ( memory_ + location );
          }
 
@@ -31,22 +45,9 @@ namespace Commodore64
          
       };
 
-   }
    
-   enum Ram::RamLocation
-   {
-       DataDirection = 0,
-       Port = 1,
-       ReservedMemory = 2,
-       ScreenMemory = 1024,
-       Animations = 2040,
-       UserProgramMemory = 2048,
-       BasicInterpreter = 40960,
-       VicIIregs = 53248,
-       ColorRam = 55296,
-       IOregs = 56320,
-       OsKernel = 57344
-   };
+      
+   }
 }
 
 #endif /*RAM_H*/

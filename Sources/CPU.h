@@ -12,36 +12,41 @@ namespace Commodore64
 
       class Cpu
       {
-
+      public:
+         
+         static const int registersNum = 6;
+         
       public:
 
-         enum CpuRegisters;
+         enum CpuRegisters
+         { 
+            RegA,
+            RegX,
+            RegY,
+            RegFlag,
+            RegSP,
+            RegPC
+         };
 
          const Register &getReg( CpuRegisters reg ) const
          {
+            assert( reg >= 0 && reg < registersNum );
             return registers[ reg ];
          }
          
          Register &getReg( CpuRegisters reg )
          {
+            assert( reg >= 0 && reg < registersNum );
             return registers[ reg ];
          }
 
       private:
 
-         Register registers[ 6 ];
+         Register registers[ registersNum ];
 
       };
 
-      enum Cpu::CpuRegisters
-      { 
-         RegA,
-         RegX,
-         RegY,
-         RegFlag
-         RegSP,
-         RegPC,
-      };
+      
 
    }
 
